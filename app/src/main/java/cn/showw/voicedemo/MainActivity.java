@@ -53,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     handler.sendMessage(getMsg("请说话"));
                 }
                 if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_FINISH)) {
-                    handler.sendMessage(getMsg("finish"));
+                    String json = "{\"accept-audio-data\":false,\"disable-punctuation\":false,\"accept-audio-volume\":true,\"pid\":1536}";
+                    eventManager.send(SpeechConstant.ASR_START, json, null, 0, 0);
+                    b = false;
                 }
                 if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
                     handler.sendMessage(getMsg(getMatcher(s1, MatcherRegex.RESULT, 1)));
