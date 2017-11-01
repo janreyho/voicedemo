@@ -23,4 +23,11 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="196dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="结束"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="196dp" />
 </LinearLayout>

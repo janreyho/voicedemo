@@ -49,14 +49,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eventManager.registerListener(new EventListener() {
             @Override
             public void onEvent(String name, String s1, byte[] bytes, int i, int i1) {
-                if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_READY)) {
-                    handler.sendMessage(getMsg("请说话"));
-                }
-                if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_FINISH)) {
-                    String json = "{\"accept-audio-data\":false,\"disable-punctuation\":false,\"accept-audio-volume\":true,\"pid\":1536}";
-                    eventManager.send(SpeechConstant.ASR_START, json, null, 0, 0);
-                    b = false;
-                }
+//                if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_READY)) {
+//                    handler.sendMessage(getMsg("请说话"));
+//                }
+               if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_FINISH)) {
+                    if (_voice_start){
+                        eventManager.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
+                       String json = "{\"accept-audio-data\":false,\"disable-punctuation\":false,\"accept-audio-volume\":true,\"pid\":1536}";
+                       eventManager.send(SpeechConstant.ASR_START, json, null, 0, 0);
+                    }
+               }
                 if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
                     handler.sendMessage(getMsg(getMatcher(s1, MatcherRegex.RESULT, 1)));
                 }
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         findViewById(R.id.button).setOnClickListener(this);
-
+        findViewById(R.id.button2).setOnClickListener(this);
     }
 
     static class MatcherRegex {
@@ -97,23 +99,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
-    static boolean b = true;
+    static boolean _voice_start = false;  //false:未开始   true：开始
 
     @Override
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
             case R.id.button: {
-                if (b) {
+                if (!_voice_start){
                     String json = "{\"accept-audio-data\":false,\"disable-punctuation\":false,\"accept-audio-volume\":true,\"pid\":1536}";
                     eventManager.send(SpeechConstant.ASR_START, json, null, 0, 0);
-                    b = false;
-                } else {
-                    eventManager.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
-                    b = true;
+                    _voice_start = true;
                 }
+                break;
             }
-            break;
+            case R.id.button2:{
+                if (_voice_start){
+                    eventManager.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
+                    _voice_start = false;
+                }
+                break;
+            }
         }
     }
 
