@@ -1,5 +1,10 @@
 package cn.showw.voicedemo;
 
+import cn.showw.voicedemo.recognization.RecogEventAdapter;
+import cn.showw.voicedemo.recognization.MessageStatusRecogListener;
+import cn.showw.voicedemo.recognization.StatusRecogListener;
+import cn.showw.voicedemo.recognization.IRecogListener;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -46,24 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }));
 
         eventManager = EventManagerFactory.create(this, "asr");
-        eventManager.registerListener(new EventListener() {
-            @Override
-            public void onEvent(String name, String s1, byte[] bytes, int i, int i1) {
-//                if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_READY)) {
-//                    handler.sendMessage(getMsg("请说话"));
-//                }
-               if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_FINISH)) {
-                    if (_voice_start){
-                        eventManager.send(SpeechConstant.ASR_STOP, null, null, 0, 0);
-                       String json = "{\"accept-audio-data\":false,\"disable-punctuation\":false,\"accept-audio-volume\":true,\"pid\":1536}";
-                       eventManager.send(SpeechConstant.ASR_START, json, null, 0, 0);
-                    }
-               }
-                if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
-                    handler.sendMessage(getMsg(getMatcher(s1, MatcherRegex.RESULT, 1)));
-                }
-            }
-        });
+        StatusRecogListener listener = new MessageStatusRecogListener(handler);
+        eventManager.registerListener(new RecogEventAdapter((IRecogListener)listener));
 
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
