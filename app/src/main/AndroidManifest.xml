@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.showw.voicedemo">
+    package="com.difdif.voicedemo">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,13 +18,13 @@
 
         <meta-data
             android:name="com.baidu.speech.APP_ID"
-            android:value="10167962" />
+            android:value="10323809" />
         <meta-data
             android:name="com.baidu.speech.API_KEY"
-            android:value="0dWufg7df8Wr8WMchDBD3bmP" />
+            android:value="wMyXFhtcd0ggIZ6ymSnBGv5F" />
         <meta-data
             android:name="com.baidu.speech.SECRET_KEY"
-            android:value="0c16541dc060bf3fe29a2567a71b6251" />
+            android:value="51cbb0d299a4807c548642813a5ce61c" />
 
         <service
             android:name="com.baidu.speech.VoiceRecognitionService"

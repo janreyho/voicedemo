@@ -1,4 +1,4 @@
-package cn.showw.voicedemo;
+package com.difdif.voicedemo;
 
 import org.junit.Test;
 

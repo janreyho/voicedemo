@@ -1,4 +1,4 @@
-package cn.showw.voicedemo;
+package com.difdif.voicedemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cn.showw.voicedemo", appContext.getPackageName());
+        assertEquals("com.difdif.voicedemo", appContext.getPackageName());
     }
 }
