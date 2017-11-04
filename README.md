@@ -1,3 +1,6 @@
 # BaiduVoiceDemo
-百度语音识别demo
-有个别错的单词，懒改得了，别介意啊。
+百度android语音识别，对官方demo进行裁剪。
+
+## demo
+
+![android截图](image/android.png)
