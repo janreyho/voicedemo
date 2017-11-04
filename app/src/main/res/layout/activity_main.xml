@@ -7,13 +7,18 @@
     android:orientation="vertical"
     tools:context="cn.showw.voicedemo.MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="2dp" />
+        android:layout_above="@+id/btn"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"/>
+    </ScrollView>
 
     <Button
         android:id="@+id/button"
