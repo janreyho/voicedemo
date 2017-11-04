@@ -1,4 +1,4 @@
-package cn.showw.voicedemo.recognization;
+package com.difdif.voicedemo.recognization;
 
 import org.json.JSONArray;
 import org.json.JSONException;

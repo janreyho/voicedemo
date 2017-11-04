@@ -1,4 +1,4 @@
-package cn.showw.voicedemo.control;
+package com.difdif.voicedemo.control;
 
 import android.speech.SpeechRecognizer;
 

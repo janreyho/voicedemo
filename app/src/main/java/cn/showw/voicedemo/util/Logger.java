@@ -1,4 +1,4 @@
-package cn.showw.voicedemo.util;
+package com.difdif.voicedemo.util;
 
 import android.os.Handler;
 import android.os.Message;

@@ -1,4 +1,4 @@
-package cn.showw.voicedemo.recognization;
+package com.difdif.voicedemo.recognization;
 
 /**
  * Created by fujiayi on 2017/6/14.

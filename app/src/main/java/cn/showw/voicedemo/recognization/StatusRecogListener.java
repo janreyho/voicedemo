@@ -1,4 +1,4 @@
-package cn.showw.voicedemo.recognization;
+package com.difdif.voicedemo.recognization;
 
 /**
  * Created by fujiayi on 2017/6/14.
@@ -6,7 +6,7 @@ package cn.showw.voicedemo.recognization;
 
 import android.util.Log;
 
-import cn.showw.voicedemo.util.Logger;
+import com.difdif.voicedemo.util.Logger;
 
 public class StatusRecogListener implements IRecogListener, IStatus {
 

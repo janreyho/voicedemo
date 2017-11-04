@@ -1,11 +1,11 @@
-package cn.showw.voicedemo.recognization;
+package com.difdif.voicedemo.recognization;
 
 import android.util.Log;
 
-import cn.showw.voicedemo.control.ErrorTranslation;
+import com.difdif.voicedemo.control.ErrorTranslation;
 import com.baidu.speech.EventListener;
 import com.baidu.speech.asr.SpeechConstant;
-import cn.showw.voicedemo.util.Logger;
+import com.difdif.voicedemo.util.Logger;
 
 import org.json.JSONException;
 import org.json.JSONObject;

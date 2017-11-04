@@ -1,9 +1,9 @@
-package cn.showw.voicedemo;
+package com.difdif.voicedemo;
 
-import cn.showw.voicedemo.recognization.RecogEventAdapter;
-import cn.showw.voicedemo.recognization.MessageStatusRecogListener;
-import cn.showw.voicedemo.recognization.StatusRecogListener;
-import cn.showw.voicedemo.recognization.IRecogListener;
+import com.difdif.voicedemo.recognization.RecogEventAdapter;
+import com.difdif.voicedemo.recognization.MessageStatusRecogListener;
+import com.difdif.voicedemo.recognization.StatusRecogListener;
+import com.difdif.voicedemo.recognization.IRecogListener;
 
 import android.Manifest;
 import android.app.Activity;
